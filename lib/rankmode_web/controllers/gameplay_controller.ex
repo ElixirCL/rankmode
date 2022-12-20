@@ -19,11 +19,10 @@ defmodule RankmodeWeb.GameplayController do
     case card do
       nil -> show_error(conn, %{card: "not valid"})
       card ->
-        profile_id = Map.get(params, "profile_id", -1)
-        profile = Profiles.Queries.get(id: profile_id)
-        case !is_nil(profile) && profile.card_id == card.id do
-          true -> save_gameplay(conn, create_attrs(params, card, profile), profile)
-          false -> show_error(conn, %{profile: "not valid"})
+        profile = Profiles.Queries.get(id: card.profile.id)
+        case profile do
+          nil -> show_error(conn, %{profile: "not valid"})
+          _ -> save_gameplay(conn, create_attrs(params, card, profile), profile)
         end
     end
   end
@@ -80,8 +79,6 @@ defmodule RankmodeWeb.GameplayController do
 
   defp update_leaderboard(conn, profile, gameplay, input) do
     attrs = Leaderboards.prepare_update_attrs(profile, gameplay, input)
-
-    IO.inspect attrs
 
     case Leaderboards.Commands.update(profile.leaderboard.id, attrs) do
       {:ok, leaderboard} -> conn

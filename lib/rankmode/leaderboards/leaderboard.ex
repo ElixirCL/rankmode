@@ -4,7 +4,7 @@ defmodule Rankmode.Leaderboards.Leaderboard do
 
   schema "leaderboards" do
     field :level, :integer
-    field :total_kcal, :integer
+    field :total_kcal, :float
     field :total_plays, :integer
     field :total_steps, :integer
     field :exp, :integer

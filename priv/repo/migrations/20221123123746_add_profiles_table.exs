@@ -34,7 +34,7 @@ defmodule Rankmode.Repo.Migrations.AddProfilesTable do
       add :game_id, references(:games, on_delete: :nilify_all)
       add :mix_id, references(:mixes, on_delete: :nilify_all)
       add :level, :integer, null: false, default: 1
-      add :total_kcal, :integer, null: false, default: 0
+      add :total_kcal, :float, null: false, default: 0
       add :total_plays, :integer, null: false, default: 0
       add :total_steps, :integer, null: false, default: 0
       add :exp, :integer, null: false, default: 0

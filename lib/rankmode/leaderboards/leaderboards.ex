@@ -17,34 +17,79 @@ defmodule Rankmode.Leaderboards do
   @level_const 0.04
 
   defp level(exp) do
-    case floor(@level_const * :math.sqrt(exp)) do
-      level when level <= @max_level -> level
+    case floor(@level_const * :math.sqrt(exp)) - 1 do
+      level when level <= 0 -> 1
+      level when level < @max_level -> level
       _ -> @max_level
     end
   end
 
   def prepare_update_attrs(profile, gameplay, input) do
-    # field :level, :integer
-    # field :total_kcal, :integer
-    # field :total_plays, :integer
-    # field :total_steps, :integer
-    # field :exp, :integer
-    # field :pp, :integer
-    # field :single_score, :integer
-    # field :double_score, :integer
-    # field :total_score, :integer
-    # field :rank_exp, :integer
-    # field :rank_single, :integer
-    # field :rank_double, :integer
-    # field :rank_total, :integer
-    %{
+    Map.merge(%{
+      profile_id: profile.id,
+      game_id: profile.game_id,
+      mix_id: profile.mix_id,
       level: level(profile.leaderboard.exp + gameplay.exp),
       total_kcal: profile.leaderboard.total_kcal + gameplay.total_kcal,
-      total_plays: profile.leaderbord.total_plays + 1,
+      total_plays: profile.leaderboard.total_plays + 1,
       total_steps: profile.leaderboard.total_steps + input.total_steps,
       exp: profile.leaderboard.exp + gameplay.exp,
       pp: profile.leaderboard.pp + gameplay.pp,
+      single_score: profile.leaderboard.single_score,
+      double_score: profile.leaderboard.double_score,
+      total_score: profile.leaderboard.total_score,
+      rank_exp: profile.leaderboard.rank_exp,
+      rank_single: profile.leaderboard.rank_single,
+      rank_double: profile.leaderboard.rank_double,
+      rank_total: profile.leaderboard.rank_total
+    }, scores(profile, gameplay, input.chart.type, input.judgement))
+  end
+
+  defp scores(profile, gameplay, "S", "vj") do
+    %{
+      single_score: profile.leaderboard.single_score + gameplay.total_score,
+      rank_single: profile.leaderboard.rank_single + gameplay.total_score,
+      rank_total: profile.leaderboard.rank_total + gameplay.total_score,
+      rank_exp: profile.leaderboard.rank_exp + gameplay.exp
     }
+  end
+
+  defp scores(profile, gameplay, "D", "vj") do
+    %{
+      double_score: profile.leaderboard.single_score + gameplay.total_score,
+      rank_double: profile.leaderboard.rank_double + gameplay.total_score,
+      rank_total: profile.leaderboard.rank_total + gameplay.total_score,
+      rank_exp: profile.leaderboard.rank_exp + gameplay.exp
+    }
+  end
+
+  defp scores(profile, gameplay, "S", _judgement) do
+    %{
+      single_score: profile.leaderboard.single_score + gameplay.total_score
+    }
+  end
+
+  defp scores(profile, gameplay, "D", _judgement) do
+    %{
+      double_score: profile.leaderboard.single_score + gameplay.total_score
+    }
+  end
+
+  defp scores(profile, gameplay, "SP", _judgement) do
+    %{
+      single_score: profile.leaderboard.single_score + gameplay.total_score
+    }
+  end
+
+  defp scores(profile, gameplay, "DP", _judgement) do
+    %{
+      double_score: profile.leaderboard.single_score + gameplay.total_score
+    }
+  end
+
+  # Other modes like Co-Op
+  defp scores(_profile, _gameplay, _mode, _judgement) do
+    %{}
   end
 end
 

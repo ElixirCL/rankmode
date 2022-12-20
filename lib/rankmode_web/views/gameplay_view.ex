@@ -16,13 +16,18 @@ defmodule RankmodeWeb.GameplayView do
 
   def render("gameplay.json", %{gameplay: gameplay}) do
     %{
-      id: gameplay.id
+      id: gameplay.id,
+      exp: gameplay.exp,
+      pp: gameplay.pp,
     }
   end
 
-  def render("leaderboard.json", %{leaderboard: leaderboard}) do
+  def render("leaderboard.json", %{gameplay: leaderboard}) do
     %{
-      id: leaderboard.id
+      id: leaderboard.id,
+      level: leaderboard.level,
+      exp: leaderboard.exp,
+      pp: leaderboard.pp
     }
   end
 

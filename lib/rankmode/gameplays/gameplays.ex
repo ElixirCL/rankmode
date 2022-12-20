@@ -34,7 +34,7 @@ defmodule Rankmode.Gameplays.Queries do
 end
 
 defmodule Rankmode.Gameplays.Calculator.Input do
-  defstruct ~w(marvellous perfect great good bad miss max_combo total_steps accuracy total_score total_kcal judgement grade chart)a
+  defstruct ~w(marvellous perfect great good bad miss max_combo total_steps accuracy total_score total_kcal judgement judgement_map grade grade_map chart chart_map)a
 
   def from(params: params, chart: chart) do
     total_steps = total_steps(steps(params))
@@ -48,15 +48,18 @@ defmodule Rankmode.Gameplays.Calculator.Input do
       max_combo: Map.get(params, "max_combo", 0),
       total_score: Map.get(params, "total_score", 0),
       total_kcal: Map.get(params, "total_kcal", 0),
-      judgement: %{
+      judgement: String.downcase(Map.get(params, "judgement", "nj")),
+      judgement_map: %{
         name: String.downcase(Map.get(params, "judgement", "nj")),
         value: judgement(params)
       },
-      grade: %{
+      grade: String.downcase(Map.get(params, "grade", "f")),
+      grade_map: %{
         name: String.downcase(Map.get(params, "grade", "f")),
         value: grade(params)
       },
-      chart: %{
+      chart: chart,
+      chart_map: %{
         data: chart,
         value: type(chart)
       },
@@ -142,11 +145,11 @@ defmodule Rankmode.Gameplays.Calculator do
   alias __MODULE__.Input
 
   def exp(%Input{} = input, "piu.xx") do
-    ceil(((input.total_steps / 10) + (input.grade.value + input.judgement.value + input.chart.value) * input.chart.data.difficulty) + (input.accuracy * 100)) + 10
+    ceil(((input.total_steps / 1000) + (input.grade_map.value + input.judgement_map.value + input.chart_map.value) * input.chart.difficulty) + (input.accuracy * 100)) + 10
   end
 
   def pp(%Input{} = input, "piu.xx") do
-    ceil((input.total_steps / 100) + ((input.total_score * input.accuracy) + ((input.grade.value + input.judgement.value + input.grade.value) * input.chart.data.difficulty)) / 100) + 10
+    ceil((input.total_steps / 1000) + ((input.total_score * input.accuracy) + ((input.grade_map.value + input.judgement_map.value + input.grade_map.value) * input.chart.difficulty)) / 1000) + 10
   end
 end
 
