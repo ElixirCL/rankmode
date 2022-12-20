@@ -1,0 +1,1672 @@
+{
+    "other": {
+        "size": {
+            "width": "120",
+            "height": "120"
+        },
+        "items": [{
+            "mix": "",
+            "name": "Blank",
+            "pp": 0,
+            "image": "blank.jpg",
+            "sort": 0,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        },
+        {
+            "mix": "",
+            "name": "XX Girl",
+            "pp": 0,
+            "image": "default.png",
+            "sort": 0,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }]
+    },
+    "prime2": {
+        "size": {
+            "width": "120",
+            "height": "120"
+        },
+        "items":  [{
+            "mix": "prime2",
+            "name": "Moment Day",
+            "pp": 7500,
+            "image": "000.jpg",
+            "sort": 1,
+            "effects": {
+                "pp": 0,
+                "exp": 0.02
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Force of Ra",
+            "pp": 500,
+            "image": "001.jpg",
+            "sort": 2,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Prima",
+            "pp": 132000,
+            "image": "002.jpg",
+            "sort": 3,
+            "effects": {
+                "pp": 0,
+                "exp": 0.1
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Primo",
+            "pp": 132000,
+            "image": "003.jpg",
+            "sort": 4,
+            "effects": {
+                "pp": 0,
+                "exp": 0.1
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mari",
+            "pp": 548000,
+            "image": "004.jpg",
+            "sort": 5,
+            "effects": {
+                "pp": 0,
+                "exp": 0.2
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mori",
+            "pp": 548000,
+            "image": "005.jpg",
+            "sort": 6,
+            "effects": {
+                "pp": 0,
+                "exp": 0.2
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Gardian MK2",
+            "pp": 18000,
+            "image": "006.jpg",
+            "sort": 7,
+            "effects": {
+                "pp": 0,
+                "exp": 0.04
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Arcana",
+            "pp": 18000,
+            "image": "007.jpg",
+            "sort": 8,
+            "effects": {
+                "pp": 0,
+                "exp": 0.04
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Hellfire",
+            "pp": 18000,
+            "image": "008.jpg",
+            "sort": 9,
+            "effects": {
+                "pp": 0,
+                "exp": 0.04
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Merker",
+            "pp": 7500,
+            "image": "009.jpg",
+            "sort": 10,
+            "effects": {
+                "pp": 0,
+                "exp": 0.04
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Ghost Tree",
+            "pp": 41500,
+            "image": "010.jpg",
+            "sort": 11,
+            "effects": {
+                "pp": 0,
+                "exp": 0.06
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Sarabande",
+            "pp": 18000,
+            "image": "011.jpg",
+            "sort": 12,
+            "effects": {
+                "pp": 0,
+                "exp": 0.04
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Christmas Memories",
+            "pp": 500,
+            "image": "012.jpg",
+            "sort": 13,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "God Mode",
+            "pp": 41500,
+            "image": "013.jpg",
+            "sort": 14,
+            "effects": {
+                "pp": 0,
+                "exp": 0.06
+            }
+        }, {
+            "mix": "prime2",
+            "name": "DAEGI 67",
+            "pp": 79000,
+            "image": "014.jpg",
+            "sort": 15,
+            "effects": {
+                "pp": 0,
+                "exp": 0.08
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Hyperion",
+            "pp": 41500,
+            "image": "015.jpg",
+            "sort": 16,
+            "effects": {
+                "pp": 0,
+                "exp": 0.06
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mikazuki",
+            "pp": 79000,
+            "image": "016.jpg",
+            "sort": 17,
+            "effects": {
+                "pp": 0,
+                "exp": 0.08
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Yeo rae a",
+            "pp": 500,
+            "image": "017.jpg",
+            "sort": 18,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "An-Soie",
+            "pp": 79000,
+            "image": "018.jpg",
+            "sort": 19,
+            "effects": {
+                "pp": 0,
+                "exp": 0.08
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Zeronia",
+            "pp": 41500,
+            "image": "019.jpg",
+            "sort": 20,
+            "effects": {
+                "pp": 0,
+                "exp": 0.06
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Clotho",
+            "pp": 54800,
+            "image": "020.jpg",
+            "sort": 21,
+            "effects": {
+                "pp": 0,
+                "exp": 0.2
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Amami Satouko",
+            "pp": 336900,
+            "image": "021.jpg",
+            "sort": 22,
+            "effects": {
+                "pp": 0,
+                "exp": 0.15
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Aki&Erue",
+            "pp": 213400,
+            "image": "022.jpg",
+            "sort": 23,
+            "effects": {
+                "pp": 0,
+                "exp": 0.12
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Kumi",
+            "pp": 132000,
+            "image": "023.jpg",
+            "sort": 24,
+            "effects": {
+                "pp": 0,
+                "exp": 0.1
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Super Fantasy",
+            "pp": 500,
+            "image": "024.jpg",
+            "sort": 25,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Follow Me",
+            "pp": 500,
+            "image": "025.jpg",
+            "sort": 26,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Creed",
+            "pp": 336900,
+            "image": "026.jpg",
+            "sort": 27,
+            "effects": {
+                "pp": 0,
+                "exp": 0.15
+            }
+        }, {
+            "mix": "prime2",
+            "name": "O.B.G Girl",
+            "pp": 500,
+            "image": "027.jpg",
+            "sort": 28,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Exceed Girl",
+            "pp": 500,
+            "image": "028.jpg",
+            "sort": 29,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Fiesta2 Girl",
+            "pp": 500,
+            "image": "029.jpg",
+            "sort": 30,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "HOT",
+            "pp": 500,
+            "image": "030.jpg",
+            "sort": 31,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "O.B.G Girl 2",
+            "pp": 500,
+            "image": "031.jpg",
+            "sort": 32,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Chibi 1",
+            "pp": 500,
+            "image": "032.jpg",
+            "sort": 33,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Chibi 2",
+            "pp": 500,
+            "image": "033.jpg",
+            "sort": 34,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Chibi 3",
+            "pp": 500,
+            "image": "034.jpg",
+            "sort": 35,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Seulki",
+            "pp": 79000,
+            "image": "035.jpg",
+            "sort": 36,
+            "effects": {
+                "pp": 0,
+                "exp": 0.08
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Jiwan",
+            "pp": 79000,
+            "image": "036.jpg",
+            "sort": 37,
+            "effects": {
+                "pp": 0,
+                "exp": 0.08
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Chibi 4",
+            "pp": 500,
+            "image": "037.jpg",
+            "sort": 38,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mr. Larpus",
+            "pp": 500,
+            "image": "038.jpg",
+            "sort": 39,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Chibi 5",
+            "pp": 500,
+            "image": "039.jpg",
+            "sort": 40,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mari Prime2",
+            "pp": 0,
+            "image": "040.jpg",
+            "sort": 41,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "prime2",
+            "name": "Mori Prime2",
+            "pp": 0,
+            "image": "041.jpg",
+            "sort": 42,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }]
+    },
+    "prime": {
+        "size": {
+            "width": "116",
+            "height": "115"
+        },
+        "items": [{
+            "mix": "prime",
+            "name": "Prime Boy",
+            "image": "040.png",
+            "sort": 0,
+            "pp": 0,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        },
+        {
+            "mix": "prime",
+            "name": "Prime Girl",
+            "image": "041.png",
+            "sort": 0,
+            "pp": 0,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        },
+        {
+            "mix": "prime",
+            "name": "No.1",
+            "image": "000.png",
+            "sort": 0,
+            "pp": 500,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        },
+        {
+            "mix": "prime",
+            "name": "No.2",
+            "image": "001.png",
+            "sort": 1,
+            "pp": 500,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        },
+        {
+            "mix": "prime",
+            "name": "No.3",
+            "image": "002.png",
+            "sort": 2,
+            "pp": 500,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        },
+        {
+            "mix": "prime",
+            "name": "No.4",
+            "image": "003.png",
+            "sort": 3,
+            "pp": 500,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        }, 
+        {
+            "mix": "prime",
+            "name": "No.5",
+            "image": "004.png",
+            "sort": 4,
+            "pp": 500,
+            "effects": {
+                "exp": 0,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.6",
+            "image": "005.png",
+            "sort": 5,
+            "pp": 2500,
+            "effects": {
+                "exp": 0.04,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.7",
+            "image": "006.png",
+            "sort": 6,
+            "pp": 2500,
+            "effects": {
+                "exp": 0.04,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.8",
+            "image": "007.png",
+            "sort": 7,
+            "pp": 5000,
+            "effects": {
+                "exp": 0,
+                "pp": 0.02
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.9",
+            "image": "008.png",
+            "sort": 8,
+            "pp": 5000,
+            "effects": {
+                "exp": 0,
+                "pp": 0.02
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.10",
+            "image": "009.png",
+            "sort": 9,
+            "pp": 16500,
+            "effects": {
+                "exp": 0.04,
+                "pp": 0.02
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.11",
+            "image": "010.png",
+            "sort": 10,
+            "pp": 16500,
+            "effects": {
+                "exp": 0.04,
+                "pp": 0.02
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.12",
+            "image": "011.png",
+            "sort": 11,
+            "pp": 16500,
+            "effects": {
+                "exp": 0.04,
+                "pp": 0.02
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.13",
+            "image": "012.png",
+            "sort": 12,
+            "pp": 6800,
+            "effects": {
+                "exp": 0.08,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.14",
+            "image": "013.png",
+            "sort": 13,
+            "pp": 6800,
+            "effects": {
+                "exp": 0.08,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.15",
+            "image": "014.png",
+            "sort": 14,
+            "pp": 13500,
+            "effects": {
+                "exp": 0,
+                "pp": 0.04
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.16",
+            "image": "015.png",
+            "sort": 15,
+            "pp": 13500,
+            "effects": {
+                "exp": 0,
+                "pp": 0.04
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.17",
+            "image": "016.png",
+            "sort": 16,
+            "pp": 44600,
+            "effects": {
+                "exp": 0.08,
+                "pp": 0.04
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.18",
+            "image": "017.png",
+            "sort": 17,
+            "pp": 44600,
+            "effects": {
+                "exp": 0.08,
+                "pp": 0.04
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.19",
+            "image": "018.png",
+            "sort": 18,
+            "pp": 44600,
+            "effects": {
+                "exp": 0.08,
+                "pp": 0.04
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.20",
+            "image": "019.png",
+            "sort": 19,
+            "pp": 18300,
+            "effects": {
+                "exp": 0.12,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.21",
+            "image": "020.png",
+            "sort": 20,
+            "pp": 18300,
+            "effects": {
+                "exp": 0.12,
+                "pp": 0
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.22",
+            "image": "021.png",
+            "sort": 21,
+            "pp": 36500,
+            "effects": {
+                "exp": 0,
+                "pp": 0.06
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.23",
+            "image": "022.png",
+            "sort": 22,
+            "pp": 36500,
+            "effects": {
+                "exp": 0,
+                "pp": 0.06
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.24",
+            "image": "023.png",
+            "sort": 23,
+            "pp": 120300,
+            "effects": {
+                "exp": 0.12,
+                "pp": 0.06
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.25",
+            "image": "024.png",
+            "sort": 24,
+            "pp": 120300,
+            "effects": {
+                "exp": 0.12,
+                "pp": 0.06
+            }
+        }, {
+            "mix": "prime",
+            "name": "No.26",
+            "image": "025.png",
+            "sort": 25,
+            "pp": 120300,
+            "effects": {
+                "exp": 0.12,
+                "pp": 0.06
+            }
+        }]
+    },
+    "xx": {
+        "size": {
+            "width": "160",
+            "height": "120"
+        },
+        "items": [{
+            "mix": "xx",
+            "name": "MC",
+            "pp": 0,
+            "image": "070.png",
+            "sort": 0,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mikazuki",
+            "pp": 5000,
+            "image": "105.png",
+            "sort": 1,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Meteor",
+            "pp": 5000,
+            "image": "113.png",
+            "sort": 2,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mode G",
+            "pp": 10000,
+            "image": "115.png",
+            "sort": 3,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Hellfire",
+            "pp": 4000,
+            "image": "118.png",
+            "sort": 4,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Ailee",
+            "pp": 5000,
+            "image": "125.png",
+            "sort": 5,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Native Magic",
+            "pp": 9999,
+            "image": "129.png",
+            "sort": 6,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Hannah",
+            "pp": 5000,
+            "image": "139.png",
+            "sort": 7,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Matsuri (HEY)",
+            "pp": 50000,
+            "image": "150.png",
+            "sort": 8,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Aya",
+            "pp": 15000,
+            "image": "152.png",
+            "sort": 9,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Pumcaddy",
+            "pp": 15000,
+            "image": "153.png",
+            "sort": 10,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Melissa",
+            "pp": 5000,
+            "image": "159.png",
+            "sort": 11,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Jonathan",
+            "pp": 3500,
+            "image": "160.png",
+            "sort": 12,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Escape",
+            "pp": 5500,
+            "image": "162.png",
+            "sort": 13,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Youyuu Sumire",
+            "pp": 0,
+            "image": "142.png",
+            "sort": 14,
+            "event": true,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Tritium",
+            "pp": 4000,
+            "image": "119.png",
+            "sort": 15,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Rae A",
+            "pp": 10000,
+            "image": "127.png",
+            "sort": 16,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Phou",
+            "pp": 7000,
+            "image": "128.png",
+            "sort": 17,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mental Cube",
+            "pp": 2424,
+            "image": "132.png",
+            "sort": 18,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "King Scorpion",
+            "pp": 5000,
+            "image": "138.png",
+            "sort": 19,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Takalook",
+            "pp": 5000,
+            "image": "141.png",
+            "sort": 20,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Alice",
+            "pp": 3500,
+            "image": "144.png",
+            "sort": 21,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Dasom",
+            "pp": 3500,
+            "image": "145.png",
+            "sort": 22,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Century of Limitation",
+            "pp": 23000,
+            "image": "146.png",
+            "sort": 23,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Little Lamb",
+            "pp": 25000,
+            "image": "147.png",
+            "sort": 24,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Denis",
+            "pp": 15000,
+            "image": "148.png",
+            "sort": 25,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Matsuri",
+            "pp": 15000,
+            "image": "149.png",
+            "sort": 26,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Music Warrior",
+            "pp": 3000,
+            "image": "117.png",
+            "sort": 27,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Loar",
+            "pp": 0,
+            "image": "163.png",
+            "sort": 28,
+            "event": true,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Lyra, the Awaken",
+            "pp": 4000,
+            "image": "102.png",
+            "sort": 29,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Arca",
+            "pp": 15000,
+            "image": "120.png",
+            "sort": 30,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Rhyth",
+            "pp": 15000,
+            "image": "121.png",
+            "sort": 31,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "DENEBOLA",
+            "pp": 15000,
+            "image": "122.png",
+            "sort": 32,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Lightning Green",
+            "pp": 15000,
+            "image": "123.png",
+            "sort": 33,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Electronic Cat",
+            "pp": 15000,
+            "image": "124.png",
+            "sort": 34,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Nashor. Laurence",
+            "pp": 3500,
+            "image": "130.png",
+            "sort": 35,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Guild Savior",
+            "pp": 3000,
+            "image": "134.png",
+            "sort": 36,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Everybody Loves Chicken",
+            "pp": 3000,
+            "image": "135.png",
+            "sort": 37,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Great Teachers",
+            "pp": 2015,
+            "image": "137.png",
+            "sort": 38,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Meiling & Hao-Yu",
+            "pp": 10000,
+            "image": "140.png",
+            "sort": 39,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Hero",
+            "pp": 3500,
+            "image": "158.png",
+            "sort": 40,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "The Quick Brown Fox",
+            "pp": 1234,
+            "image": "161.png",
+            "sort": 41,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Violet Perfume",
+            "pp": 5000,
+            "image": "136.png",
+            "sort": 42,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Freedom of the Dead",
+            "pp": 19490,
+            "image": "098.png",
+            "sort": 43,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Gargoyle",
+            "pp": 40000,
+            "image": "099.png",
+            "sort": 44,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Christos T Elias",
+            "pp": 10000,
+            "image": "100.png",
+            "sort": 45,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Lyra D. Fersen",
+            "pp": 8000,
+            "image": "101.png",
+            "sort": 46,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Amami Satoko",
+            "pp": 10000,
+            "image": "104.png",
+            "sort": 47,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Synt. H. Wulf",
+            "pp": 2222,
+            "image": "106.png",
+            "sort": 48,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Malaventurados",
+            "pp": 3000,
+            "image": "107.png",
+            "sort": 49,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Jeanne",
+            "pp": 3000,
+            "image": "108.png",
+            "sort": 50,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Wonder & World",
+            "pp": 4000,
+            "image": "109.png",
+            "sort": 51,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Princess Choco & Candy Girl",
+            "pp": 5000,
+            "image": "110.png",
+            "sort": 52,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "ABT-1",
+            "pp": 3000,
+            "image": "111.png",
+            "sort": 53,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Alien Pig",
+            "pp": 1000,
+            "image": "112.png",
+            "sort": 54,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "CanCan Rangers",
+            "pp": 1000,
+            "image": "114.png",
+            "sort": 55,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "MERKER",
+            "pp": 30000,
+            "image": "083.png",
+            "sort": 56,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Sarabande",
+            "pp": 25000,
+            "image": "084.png",
+            "sort": 57,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Onpiov",
+            "pp": 8000,
+            "image": "085.png",
+            "sort": 58,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "The Crawling Chaos",
+            "pp": 10101,
+            "image": "086.png",
+            "sort": 59,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Stranger",
+            "pp": 8000,
+            "image": "087.png",
+            "sort": 60,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Amil",
+            "pp": 1111,
+            "image": "088.png",
+            "sort": 61,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Aki & Erue",
+            "pp": 5000,
+            "image": "089.png",
+            "sort": 62,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Unique Duo",
+            "pp": 4000,
+            "image": "091.png",
+            "sort": 63,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Devit",
+            "pp": 3000,
+            "image": "092.png",
+            "sort": 64,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Vermilion & Azure",
+            "pp": 4000,
+            "image": "093.png",
+            "sort": 65,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Miya",
+            "pp": 3000,
+            "image": "094.png",
+            "sort": 66,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Yeong Dong",
+            "pp": 1000,
+            "image": "095.png",
+            "sort": 67,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Human Faced Being",
+            "pp": 10000,
+            "image": "096.png",
+            "sort": 68,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "The Grim Reaper",
+            "pp": 100000,
+            "image": "097.png",
+            "sort": 69,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Rio & Rou",
+            "pp": 5000,
+            "image": "090.png",
+            "sort": 70,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mingming",
+            "pp": 3000,
+            "image": "078.png",
+            "sort": 71,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Panpan",
+            "pp": 3000,
+            "image": "079.png",
+            "sort": 72,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Fuyu",
+            "pp": 5000,
+            "image": "081.png",
+            "sort": 73,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mir",
+            "pp": 1000,
+            "image": "082.png",
+            "sort": 74,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Emily",
+            "pp": 5000,
+            "image": "071.png",
+            "sort": 75,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Hero",
+            "pp": 5000,
+            "image": "080.png",
+            "sort": 76,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Hanna",
+            "pp": 1000,
+            "image": "072.png",
+            "sort": 77,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Taeho",
+            "pp": 5000,
+            "image": "073.png",
+            "sort": 78,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Seulki",
+            "pp": 5000,
+            "image": "074.png",
+            "sort": 79,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Clotho",
+            "pp": 100000,
+            "image": "075.png",
+            "sort": 80,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Mari",
+            "pp": 30000,
+            "image": "076.png",
+            "sort": 81,
+            "event": false,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }, {
+            "mix": "xx",
+            "name": "Meow",
+            "pp": 0,
+            "image": "077.png",
+            "sort": 82,
+            "event": true,
+            "effects": {
+                "pp": 0,
+                "exp": 0
+            }
+        }]
+    }
+}

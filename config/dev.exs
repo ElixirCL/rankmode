@@ -25,6 +25,7 @@ config :rankmode, RankmodeWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "DpYDnmpGw3uo776F/AaaR8Siihm8hZkCi9lF08HKqwFfgOWIaX7phVn0jkO+Fnnc",
   watchers: [
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]

@@ -1,0 +1,96 @@
+<div class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
+    <div class="container sticky top-0 z-sticky">
+      <div class="flex flex-wrap -mx-3">
+        <div class="w-full max-w-full px-3 flex-0">
+        </div>
+      </div>
+    </div>
+    <main class="mt-0 transition-all duration-200 ease-soft-in-out">
+      <section id="login-form">
+          <div class="relative flex items-center p-0 overflow-hidden bg-center bg-cover min-h-75-screen">
+            <div class="container z-10">
+              <div class="flex flex-wrap mt-0 -mx-3">
+                <div class="flex flex-col w-full max-w-full px-3 mx-auto md:flex-0 shrink-0 md:w-6/12 lg:w-5/12 xl:w-4/12">
+                  <div class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
+                    <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
+                      <div class="relative z-10 mb-0 font-bold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text">
+                        <img src={Routes.static_path(@conn, "/images/logos/rankmode#{:rand.uniform(2)}.png")} title="Rank Mode Logo" alt="Rank Mode Logo"/>
+                      </div>
+                      <p class="mb-0"></p>
+                    </div>
+                    <div class="flex-auto p-6">
+                      <.form 
+                        let={f} 
+                        for={@conn} 
+                        action={Routes.user_session_path(@conn, :create)} 
+                        as={:user}
+                        class="form">
+
+                        <%= if @error_message do %>
+                          <div class="mb-4">
+                            <div alert class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300">
+                              <%= @error_message %>
+                              <button alert-close type="button" class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+                                <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                              </button>
+                            </div>
+                          </div>
+                        <% end %>
+
+                        <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Email</label>
+                        <div class="mb-4">
+                          <%= email_input f, :email, required: true, 
+                              class: "focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow",
+                              placeholder: "Email",
+                              autofocus: true
+                          %>
+                        </div>
+                        <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Password</label>
+                        <div class="mb-4">
+                          <%= password_input f, :password, required: true,
+                              class: "focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow", 
+                              placeholder: "Password"
+                          %>
+                        </div>
+                        <div class="min-h-6 mb-0.5 block pl-12">
+                          <%= checkbox f, :remember_me, class: "mt-0.54 rounded-10 duration-250 ease-soft-in-out after:rounded-circle after:shadow-soft-2xl after:duration-250 checked:after:translate-x-5.25 h-5 relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-slate-800/95 checked:bg-slate-800/95 checked:bg-none checked:bg-right" %>
+                          <label class="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700" for="remember_me">Remember me</label>
+                        </div>
+                        <div class="text-center">
+                          <%= submit "Log in", 
+                              class: "inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85"
+                          %>
+                        </div>
+                      </.form>
+                    </div>
+                    <div class="p-6 px-1 pt-0 text-center bg-transparent border-t-0 border-t-solid rounded-b-2xl lg:px-2">
+                      <p class="mx-auto mb-6 leading-normal text-sm">
+                        Don't have an account?
+                        <%= link "Create an Account",
+                            to: Routes.user_registration_path(@conn, :new),
+                            class: "relative z-10 font-semibold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text"
+                        %>
+                      </p>
+                      <p class="mx-auto mb-6 leading-normal text-sm">
+                        <%= link "Forgot your password?", 
+                            to: Routes.user_reset_password_path(@conn, :new),
+                            class: "relative z-10 font-semibold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text"
+                        %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full max-w-full px-3 lg:flex-0 shrink-0 md:w-6/12">
+                  <div class="absolute top-0 hidden w-3/5 h-full overflow-hidden rounded-bl-xl md:block">
+                    <div class="absolute inset-x-0 top-0 z-0 h-full bg-cover">
+                    <img src={Routes.static_path(@conn, "/images/characters/0#{:rand.uniform(3)}.png")} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+    <%= render RankmodeWeb.LayoutView, "_footer.html", conn: @conn %>
+</div>

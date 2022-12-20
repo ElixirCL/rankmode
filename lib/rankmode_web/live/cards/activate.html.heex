@@ -1,0 +1,88 @@
+<div class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+
+    <%= render RankmodeWeb.DashboardView, "sidebar.html", socket: @socket, page: @page %>
+
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+
+      <%= render RankmodeWeb.DashboardView, "navbar.html", socket: @socket, page: @page %>
+
+
+      <div class="mb-12">
+
+        <div class="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+          <div class="p-6 mb-0 rounded-t-2xl">
+            <h5 class="dark:text-white">Activate Card</h5>
+          </div>
+
+          <%= if @profiles == [] do %>
+            <div class="flex-auto p-6 pt-0">
+              <p>Please create a new profile first</p>
+              <a href={Routes.profiles_new_path(@socket, :new)} class="inline-block px-6 py-3 mr-3 font-bold text-center uppercase align-middle transition-all bg-transparent border rounded-lg cursor-pointer border-fuchsia-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85 hover:shadow-soft-xs text-fuchsia-500">
+                Create a New Profile
+              </a>
+            </div>
+          <% else %>
+
+            <.form let={f} for={@changeset}
+              phx-change="on:form:change"
+              phx-submit="on:form:submit"
+            >
+
+            <div class="flex-auto p-6 pt-0">
+
+              <%= if live_flash(@flash, :error) do %>
+                <div class="mb-4">
+                  <Alert.red
+                    text={live_flash(@flash, :error) || translate_error(Keyword.get(@changeset.errors, :card))}
+                    key={:error}
+                  />
+                </div>
+              <% end %>
+
+              <%= if live_flash(@flash, :info) && !live_flash(@flash, :error) do %>
+                <div class="mb-4">
+                    <Alert.green text={live_flash(@flash, :info)}/>
+                </div>
+              <% end %>
+
+              <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="uid">
+              Card Unique Identifier
+              </label>
+              <div class="mb-4">
+                <%= text_input f, :uid,
+                      phx_debounce: "blur",
+                      placeholder: "XXXX-XXXX-XXXX",
+                      required: true,
+                      value: get_field(@changeset, :uid),
+                      autofocus: true,
+                      minlength: 3,
+                      maxlength: 50,
+                      class: "mb-2 focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-green-300 focus:outline-none"
+                %>
+
+              <p>
+              An unique card identifier.
+              </p>
+              </div>
+
+              <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="avatar">
+              Link card to the following profile
+              </label>
+              <div class="mb-4">
+                <%= select f, :profiles, Enum.map(@profiles, &{&1.name, &1.id}) %>
+              </div>
+
+              <%= submit "Activate Card",
+                    class: "inline-block float-right px-8 py-2 mt-16 mb-4 font-bold text-right text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer hover:scale-102 active:opacity-85 hover:shadow-soft-xs dark:bg-gradient-to-tl dark:from-slate-850 dark:to-gray-850 bg-gradient-to-tl from-gray-900 to-slate-800 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25"
+              %>
+            </div>
+
+            </.form>
+
+          <% end %>
+        </div>
+      </div>
+
+      <%= render RankmodeWeb.DashboardView, "footer.html", socket: @socket %>
+    </main>
+</div>

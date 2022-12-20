@@ -1,5 +1,22 @@
-<main class="container">
-  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+<div class="mt-5">
+  <%= if get_flash(@conn, :info) do %>
+  <div class={["relative w-full p-4 mb-2 text-white rounded-lg", "bg-cyan-500"]}>
+    <%= get_flash(@conn, :info) %>
+    <button alert-close type="button" class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+      <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+    </button>
+  </div>
+  <% end %>
+
+  <%= if get_flash(@conn, :error) do %>
+  <div class={["relative w-full p-4 mb-2 text-white rounded-lg", "bg-red-500"]}>
+    <%= get_flash(@conn, :error) %>
+    <button alert-close type="button" class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+      <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+    </button>
+  </div>
+  <% end %>
+
   <%= @inner_content %>
-</main>
+</div>

@@ -1,0 +1,125 @@
+<div class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+
+    <%= render RankmodeWeb.DashboardView, "sidebar.html", socket: @socket, page: @page %>
+
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+
+      <%= render RankmodeWeb.DashboardView, "navbar.html", socket: @socket, page: @page %>
+
+
+      <div class="mb-12">
+        <div class="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+          <div class="p-6 mb-0 rounded-t-2xl">
+            <h5 class="dark:text-white">Edit Profile</h5>
+          </div>
+
+          <.form let={fu} for={@changeset}
+            phx-change="on:form:change"
+            phx-submit="on:form:submit"
+          >
+
+          <div class="flex-auto p-6 pt-0">
+
+            <%= if live_flash(@flash, :error) do %>
+              <div class="mb-4">
+                <Alert.red
+                  text={translate_error(Keyword.get(@changeset.errors, :name))}
+                  key={:error}
+                />
+              </div>
+            <% end %>
+
+            <%= if live_flash(@flash, :info) && !live_flash(@flash, :error) do %>
+              <div class="mb-4">
+                  <Alert.green text={live_flash(@flash, :info)}/>
+              </div>
+            <% end %>
+
+            <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="name">
+            Name
+            </label>
+            <div class="mb-4">
+              <%= text_input fu, :name,
+                    phx_debounce: "blur",
+                    placeholder: "Name",
+                    required: true,
+                    value: get_field(@changeset, :name),
+                    autofocus: true,
+                    minlength: 3,
+                    maxlength: 15,
+                    class: "uppercase mb-2 focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-green-300 focus:outline-none"
+              %>
+
+            <p>
+            No spaces. Only letters (A-Z), numbers (0-9) and underscores (_) allowed. Min 3 chars and Max 15 chars.
+            </p>
+            </div>
+
+            <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="avatar">
+            Avatar
+            </label>
+            <div class="mb-4">
+              <div class="float-left pl-6 mb-4 text-slate-500 -mx-9">
+                <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap -mx-3">
+                      <div class="w-4/12 max-w-full px-3 ml-auto text-right flex-0">
+                        <Avatar.new src={Routes.static_path(@socket, @avatar.image)} size="l" />
+                      </div>
+                      <div class="flex-none w-2/3 max-w-full px-3">
+                          <select name="avatar" id="avatar" required>
+                            <%= for avatar <- @avatars do %>
+                              <option value={avatar.id} selected={@avatar.id == avatar.id} ><%= avatar.name %></option>
+                            <% end %>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <%= submit "Save Profile",
+                  class: "inline-block float-right px-8 py-2 mt-16 mb-0 font-bold text-right text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer hover:scale-102 active:opacity-85 hover:shadow-soft-xs dark:bg-gradient-to-tl dark:from-slate-850 dark:to-gray-850 bg-gradient-to-tl from-gray-900 to-slate-800 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25"
+            %>
+          </div>
+
+          </.form>
+
+        </div>
+
+
+        <.form let={fd} for={@changeset_delete} phx-change="on:delete:change" phx-submit="on:delete:submit">
+        <div class="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border" id="delete">
+          <div class="p-6 rounded-t-2xl">
+            <h5 class="dark:text-white">Delete Profile</h5>
+            <p class="mb-0 leading-normal text-sm dark:text-white/60">Once you delete your profile, there is no going back. Please be certain.</p>
+          </div>
+          <div class="flex-auto p-6 pt-0 sm:flex">
+            <div class="flex items-center mb-6 sm:mb-0">
+              <div>
+                <div class="block pl-12 mb-0 min-h-6">
+                  <%= checkbox fd, :confirm?,
+                      class: "rounded-10 duration-250 ease-soft-in-out after:rounded-circle after:shadow-soft-2xl after:duration-250 checked:after:translate-x-full checked:after:ml-1.4 h-5 mt-0.5 relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-slate-800/95 checked:bg-slate-800/95 checked:bg-none checked:bg-right"
+                  %>
+                </div>
+              </div>
+              <div class="ml-2">
+                <span class="block font-semibold leading-normal text-sm text-slate-700 dark:text-white">Are you sure to delete your profile?</span>
+                <span class="block leading-tight text-xs">I want to delete my profile.</span>
+              </div>
+            </div>
+            <span class="inline-block px-6 py-3 mb-0 ml-auto"></span>
+            <%= if get_field(@changeset_delete, :confirm?) do %>
+              <%= submit "Delete Profile",
+                class: "inline-block px-6 py-3 m-0 ml-2 text-xs font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer ease-soft-in leading-pro tracking-tight-soft bg-gradient-to-tl from-red-600 to-rose-400 shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85"
+              %>
+            <% end %>
+          </div>
+        </div>
+        </.form>
+      </div>
+
+      <%= render RankmodeWeb.DashboardView, "footer.html", socket: @socket %>
+    </main>
+</div>

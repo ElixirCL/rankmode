@@ -24,6 +24,7 @@ defmodule RankmodeWeb do
       import Plug.Conn
       import RankmodeWeb.Gettext
       alias RankmodeWeb.Router.Helpers, as: Routes
+      alias RankmodeWeb.Helpers
     end
   end
 
@@ -98,6 +99,7 @@ defmodule RankmodeWeb do
       import RankmodeWeb.ErrorHelpers
       import RankmodeWeb.Gettext
       alias RankmodeWeb.Router.Helpers, as: Routes
+      alias RankmodeWeb.Helpers
     end
   end
 
