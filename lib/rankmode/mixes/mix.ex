@@ -10,6 +10,7 @@ defmodule Rankmode.Mixes.Mix do
     field :url, :string
     field :image, :string
     field :image_small, :string
+    field :marvellous_timing?, :boolean
 
     belongs_to :game, Rankmode.Games.Game
     timestamps(updated_at: false)

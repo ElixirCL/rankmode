@@ -29,6 +29,7 @@ defmodule Rankmode.Leaderboards do
       profile_id: profile.id,
       game_id: profile.game_id,
       mix_id: profile.mix_id,
+      grade_id: gameplay.grade_id,
       level: level(profile.leaderboard.exp + gameplay.exp),
       total_kcal: profile.leaderboard.total_kcal + gameplay.total_kcal,
       total_plays: profile.leaderboard.total_plays + 1,

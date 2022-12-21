@@ -1,15 +1,23 @@
 defmodule RankmodeWeb.GameplayView do
   use RankmodeWeb, :view
   alias RankmodeWeb.GameplayView
+  alias RankmodeWeb.LeaderboardView
 
   def render("index.json", %{gameplays: gameplays}) do
     %{data: render_many(gameplays, GameplayView, "gameplay.json")}
   end
 
-  def render("show.json", %{gameplay: gameplay, leaderboard: leaderboard}) do
+  def render("show.json", %{gameplay: gameplay, leaderboard: leaderboard, input: input}) do
     %{data: %{
+        profile: %{
+          id: gameplay.profile_id
+        },
+        song: %{
+          id: input.song.id,
+          name: input.song.name
+        },
         gameplay: render_one(gameplay, GameplayView, "gameplay.json"),
-        leaderboard: render_one(leaderboard, GameplayView, "leaderboard.json")
+        leaderboard: render_one(leaderboard, LeaderboardView, "leaderboard.json")
       }
     }
   end
@@ -18,16 +26,7 @@ defmodule RankmodeWeb.GameplayView do
     %{
       id: gameplay.id,
       exp: gameplay.exp,
-      pp: gameplay.pp,
-    }
-  end
-
-  def render("leaderboard.json", %{gameplay: leaderboard}) do
-    %{
-      id: leaderboard.id,
-      level: leaderboard.level,
-      exp: leaderboard.exp,
-      pp: leaderboard.pp
+      pp: gameplay.pp
     }
   end
 

@@ -14,6 +14,10 @@ defmodule RankmodeWeb.Helpers do
         "Edit",
         ""
       },
+      profiles_gameplays: {
+        "Gameplays",
+        ""
+      },
       cards: {
         "Cards",
         Routes.cards_index_path(socket, :index)

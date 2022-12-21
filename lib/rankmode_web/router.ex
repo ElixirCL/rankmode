@@ -81,6 +81,7 @@ defmodule RankmodeWeb.Router do
     live "/profiles", Live.Profiles.Index, :index
     live "/profiles/new", Live.Profiles.New, :new
     live "/profiles/edit/:profile", Live.Profiles.Edit, :edit
+    live "/profiles/:profile/gameplays", Live.Gameplays.Index, :index
 
     live "/cards", Live.Cards.Index, :index
     live "/cards/activate", Live.Cards.Activate, :activate

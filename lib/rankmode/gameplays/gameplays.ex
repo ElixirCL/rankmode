@@ -31,12 +31,21 @@ defmodule Rankmode.Gameplays.Queries do
   def get!(id: id) do
     Repo.get_by(Gameplay, id: id)
   end
+
+  def for(profile: profile_id) do
+    from(g in Gameplay,
+      where: g.profile_id == ^profile_id,
+      order_by: [desc: g.inserted_at],
+      preload: [:user, :game, :mix, :grade, :profile, :song, :chart, :card]
+    )
+    |> Repo.all()
+  end
 end
 
 defmodule Rankmode.Gameplays.Calculator.Input do
-  defstruct ~w(marvellous perfect great good bad miss max_combo total_steps accuracy total_score total_kcal judgement judgement_map grade grade_map chart chart_map)a
+  defstruct ~w(marvellous perfect great good bad miss max_combo total_steps accuracy total_score total_kcal judgement judgement_map grade grade_map chart chart_map song card)a
 
-  def from(params: params, chart: chart) do
+  def from(params: params, card: card, song: song, chart: chart, grade: grade) do
     total_steps = total_steps(steps(params))
     %__MODULE__{
       marvellous: Map.get(params, "marvellous", 0),
@@ -53,11 +62,13 @@ defmodule Rankmode.Gameplays.Calculator.Input do
         name: String.downcase(Map.get(params, "judgement", "nj")),
         value: judgement(params)
       },
-      grade: String.downcase(Map.get(params, "grade", "f")),
+      grade: grade.id,
       grade_map: %{
-        name: String.downcase(Map.get(params, "grade", "f")),
+        name: String.downcase(Map.get(params, "grade", "ff")),
         value: grade(params)
       },
+      song: song,
+      card: card,
       chart: chart,
       chart_map: %{
         data: chart,
@@ -74,11 +85,12 @@ defmodule Rankmode.Gameplays.Calculator.Input do
       "ss" -> 12
       "s" -> 11
       "a" -> 10
-      "b" -> 9
+      "fa" -> 9
+      "b" -> 8
       "c" -> 8
       "d" -> 7
       "f" -> 6
-      _ -> 1
+      _ -> 5
     end
   end
 
@@ -144,6 +156,7 @@ defmodule Rankmode.Gameplays.Calculator do
 
   alias __MODULE__.Input
 
+  # TODO: Consider User's Profile Avatar in Calculations for EXP and PP
   def exp(%Input{} = input, "piu.xx") do
     ceil(((input.total_steps / 1000) + (input.grade_map.value + input.judgement_map.value + input.chart_map.value) * input.chart.difficulty) + (input.accuracy * 100)) + 10
   end

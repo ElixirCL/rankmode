@@ -30,7 +30,6 @@ defmodule Rankmode.Repo.Migrations.AddGameplaysTable do
       add :total_score, :integer, null: false, default: 0
       add :total_kcal, :float, null: false, default: 0
       add :judgement, :string, null: false, default: "nj" # nj, hj, vj
-      add :grade, :string, null: false, default: "F"
 
       # Automatic Calculations
       add :exp, :integer, null: false, default: 0
@@ -55,7 +54,6 @@ defmodule Rankmode.Repo.Migrations.AddGameplaysTable do
     create index(:gameplays, [:exp])
     create index(:gameplays, [:pp])
     create index(:gameplays, [:judgement])
-    create index(:gameplays, [:grade])
 
   end
 end
