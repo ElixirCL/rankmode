@@ -100,6 +100,7 @@ defmodule RankmodeWeb.Live.Components.Avatar do
         end,
         Map.get(assigns, :class, ""),
       ]}
+      style={Map.get(assigns, :style, "")}
     />
     """
   end

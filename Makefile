@@ -17,6 +17,7 @@ db.data dd:
 	mix rankmode.add.modes
 	mix rankmode.add.songs.xx
 	mix rankmode.add.grades.xx
+	mix rankmode.add.judgements.xx
 	mix rankmode.add.game.center.example
 	mix rankmode.add.card example
 

@@ -5,7 +5,12 @@ defmodule Rankmode.Modes do
   alias Rankmode.Modes.Mode
 
   def all() do
-    Repo.all(Mode)
+    from(m in Mode, order_by: m.id)
+    |> Repo.all()
+  end
+
+  def get(id: id) do
+    Repo.get_by(Mode, id: id)
   end
 
   def get(shortname: shortname) do

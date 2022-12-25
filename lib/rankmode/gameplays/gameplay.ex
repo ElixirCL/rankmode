@@ -18,6 +18,8 @@ defmodule Rankmode.Gameplays.Gameplay do
     belongs_to :chart, Rankmode.Songs.Charts.Chart
     belongs_to :leaderboard, Rankmode.Leaderboards.Leaderboard
 
+    belongs_to :judgement, Rankmode.Judgements.Judgement
+
     belongs_to :grade, Rankmode.Grades.Grade
 
     field :marvellous, :integer
@@ -31,8 +33,6 @@ defmodule Rankmode.Gameplays.Gameplay do
     field :total_score, :integer
     field :total_kcal, :float
 
-    field :judgement, :string
-
     field :exp, :integer
     field :pp, :integer
     field :image, :string
@@ -45,11 +45,11 @@ defmodule Rankmode.Gameplays.Gameplay do
 
   @optional [:marvellous, :perfect, :great, :good,
             :bad, :miss, :max_combo, :total_score, :total_kcal,
-            :judgement, :exp, :pp, :image, :meta]
+            :exp, :pp, :image, :meta, :card_id]
 
-  @required [:checksum, :user_id, :mix_id, :game_id, :profile_id, :card_id,
+  @required [:checksum, :user_id, :mix_id, :game_id, :profile_id,
   :gamecenter_id, :machine_id, :song_id, :chart_id,
-  :leaderboard_id, :grade_id]
+  :leaderboard_id, :grade_id, :judgement_id]
 
   def changeset(model, attrs) do
     model

@@ -18,6 +18,10 @@ defmodule RankmodeWeb.Helpers do
         "Gameplays",
         ""
       },
+      profiles_gameplays_new: {
+        "New",
+        ""
+      },
       cards: {
         "Cards",
         Routes.cards_index_path(socket, :index)
@@ -36,7 +40,11 @@ defmodule RankmodeWeb.Helpers do
     bread = crumbs(socket)
     items
     |> Enum.map(fn item ->
-      Map.get(bread, item)
+      case item do
+        {key, path} -> {name, _} = Map.get(bread, key)
+          {name, path}
+        _ -> Map.get(bread, item)
+      end
     end)
   end
 

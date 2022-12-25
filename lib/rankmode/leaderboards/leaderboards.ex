@@ -24,7 +24,7 @@ defmodule Rankmode.Leaderboards do
     end
   end
 
-  def prepare_update_attrs(profile, gameplay, input) do
+  def prepare_update_attrs(profile, gameplay, total_steps, chart, judgement) do
     Map.merge(%{
       profile_id: profile.id,
       game_id: profile.game_id,
@@ -33,7 +33,7 @@ defmodule Rankmode.Leaderboards do
       level: level(profile.leaderboard.exp + gameplay.exp),
       total_kcal: profile.leaderboard.total_kcal + gameplay.total_kcal,
       total_plays: profile.leaderboard.total_plays + 1,
-      total_steps: profile.leaderboard.total_steps + input.total_steps,
+      total_steps: profile.leaderboard.total_steps + total_steps,
       exp: profile.leaderboard.exp + gameplay.exp,
       pp: profile.leaderboard.pp + gameplay.pp,
       single_score: profile.leaderboard.single_score,
@@ -43,7 +43,7 @@ defmodule Rankmode.Leaderboards do
       rank_single: profile.leaderboard.rank_single,
       rank_double: profile.leaderboard.rank_double,
       rank_total: profile.leaderboard.rank_total
-    }, scores(profile, gameplay, input.chart.type, input.judgement))
+    }, scores(profile, gameplay, chart.type, judgement.shortname))
   end
 
   defp scores(profile, gameplay, "S", "vj") do

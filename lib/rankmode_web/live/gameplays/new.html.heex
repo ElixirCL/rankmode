@@ -1,0 +1,255 @@
+<.form let={f} for={@changeset}
+            phx-change = "on:form:change"
+            phx-submit = "on:form:submit"
+>
+<div class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+
+    <%= render RankmodeWeb.DashboardView, "sidebar.html", socket: @socket, page: @page %>
+
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+
+      <%= render RankmodeWeb.DashboardView, "navbar.html", socket: @socket, page: @page %>
+
+      <div class="w-full p-6 py-4 mx-auto my-4">
+    <div class="flex flex-wrap -mx-3">
+
+    <%= if live_flash(@flash, :error) do %>
+        <div class="mb-4">
+          <Alert.red
+            text={translate_error(Keyword.get(@changeset.errors, :name))}
+            key={:error}
+          />
+        </div>
+    <% end %>
+
+    <div class="w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-6/12">
+      <div class="relative flex flex-col min-w-0 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+          <h6 class="mb-0 dark:text-white">Add Gameplay (<%= @profile.mix.name %>)</h6>
+        </div>
+        <div class="flex-auto p-2">
+
+              <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="mix">
+              Select Song
+              </label>
+              <div class="mb-4">
+                <select name="song" id="song" required>
+
+                    <option disabled selected value> -- select a song -- </option>
+
+                    <%= for song <- @songs do %>
+                      <option value={song.id} selected={!is_nil(@song) && song.id == @song.id}><%= "#{song.name} (#{song.category} / #{song.cut})" %></option>
+                    <% end %>
+                </select>
+              </div>
+
+              <%= if !is_nil(@song) do %>
+              <div class="mb-4">
+                <Avatar.new src={@song.image} size="xl" />
+              </div>
+              <% end %>
+
+              <%= if !is_nil(@mode) do %>
+              <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="mix">
+              Gameplay Mode
+              </label>
+              <div class="mb-4">
+                <select name="mode" id="mode" required>
+                    <%= for mode <- @modes do %>
+                      <option value={mode.id} selected={!is_nil(@mode) && mode.id == @mode.id}><%= mode.name %></option>
+                    <% end %>
+                </select>
+              </div>
+              <% end %>
+
+              <%= if !is_nil(@rating) do %>
+                <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="mix">
+                Difficulty Rating
+                </label>
+                <div class="mb-4">
+                  <select name="rating" id="rating" required>
+                      <%= for rating <- @ratings do %>
+                        <option value={rating.difficulty} selected={!is_nil(@rating) && rating.difficulty == @rating.difficulty}><%= rating.name %></option>
+                      <% end %>
+                  </select>
+                </div>
+              <% end %>
+
+              <%= if !is_nil(@rating) do %>
+              <div class="mb-4">
+                <Avatar.new src={@rating.image} size="l" />
+              </div>
+              <% end %>
+
+              <%= if !is_nil(@rating) do %>
+                <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="mix">
+                Game Center
+                </label>
+                <div class="mb-4">
+                  <select name="gamecenter" id="gamecenter" required>
+                      <%= for gamecenter <- @gamecenters do %>
+                        <option value={gamecenter.id} selected={!is_nil(@gamecenter) && gamecenter.id == @gamecenter.id}><%= gamecenter.name %></option>
+                      <% end %>
+                  </select>
+                </div>
+              <% end %>
+
+              <%= if !is_nil(@rating) do %>
+                <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="mix">
+                Machine
+                </label>
+                <div class="mb-4">
+                  <select name="machine" id="machine" required>
+                      <%= for machine <- @machines do %>
+                        <option value={machine.id} selected={!is_nil(@machine) && machine.id == @machine.id}><%= machine.name %></option>
+                      <% end %>
+                  </select>
+                </div>
+              <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <%= if !is_nil(@rating) do %>
+    <div class="w-full max-w-full px-3 mt-6 sm:flex-0 shrink-0 sm:w-6/12 md:mt-0">
+      <div class="relative flex flex-col min-w-0 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+          <div class="flex items-center">
+            <h6 class="mb-0 dark:text-white">Gameplay Stats</h6>
+
+          </div>
+        </div>
+        <div class="flex-auto p-4">
+
+          <%= if @profile.mix.marvellous_timing? do %>
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="marvellous">
+          Marvellous
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :marvellous)}
+            min="0" max="100000" name="marvellous" placeholder="Marvellous" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+          <% end %>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="perfect">
+          Perfect
+          </label>
+          <div class="mb-4">
+            <input autofocus="true" type="number"
+            value={get_field(@changeset, :perfect)}
+            min="0" max="100000" name="perfect" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="great">
+          Great
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :great)}
+            min="0" max="100000" name="great" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="good">
+          Good
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :good)}
+            min="0" max="100000" name="good" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="bad">
+          Bad
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :bad)}
+            min="0" max="100000" name="bad" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="miss">
+          Miss
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :miss)}
+            min="0" max="100000" name="miss" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="max_combo">
+          Max Combo
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :max_combo)}
+            min="0" max="100000" name="max_combo" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="total_score">
+          Total Score
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :total_score)}
+            min="0" max="100000000000000" name="total_score" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+          for="total_kcal">
+          Total Kcal
+          </label>
+          <div class="mb-4">
+            <input type="number"
+            value={get_field(@changeset, :total_kcal)}
+            min="0.0" step="any" max="10000000" name="total_kcal" placeholder="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="Confirm password">
+          Grade
+          </label>
+          <div class="mb-4">
+            <Avatar.new src={@grade.image} class="mr-2" style="height:50px;width:auto;" />
+
+            <select name="grade" id="grade" required>
+                  <%= for grade <- @grades do %>
+                    <option value={grade.id} selected={(!is_nil(@grade) && grade.id == @grade.id)}><%= grade.name %></option>
+                  <% end %>
+            </select>
+          </div>
+
+          <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80" for="Confirm password">
+          Judgement
+          </label>
+          <div class="mb-4">
+            <Avatar.new src={@judgement.image} class="mr-2" style="height:50px;width:auto;" />
+            <select name="judgement" id="judgement" required>
+                  <%= for judgement <- @judgements do %>
+                    <option value={judgement.id} selected={(!is_nil(@judgement) && judgement.id == @judgement.id)}><%= judgement.name %> (<%= String.upcase(judgement.shortname) %>)</option>
+                  <% end %>
+            </select>
+          </div>
+
+          <button type="submit" class="inline-block w-full px-6 py-3 mb-0 font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer hover:scale-102 active:opacity-85 hover:shadow-soft-xs dark:bg-gradient-to-tl dark:from-slate-850 dark:to-gray-850 bg-gradient-to-tl from-gray-900 to-slate-800 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25">
+          Add new Gameplay
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  </div>
+      <%= render RankmodeWeb.DashboardView, "footer.html", socket: @socket %>
+    </main>
+</div>
+</.form>

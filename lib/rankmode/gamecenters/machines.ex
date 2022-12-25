@@ -21,3 +21,20 @@ defmodule Rankmode.GameCenters.Machines do
     |> Repo.insert()
   end
 end
+
+defmodule Rankmode.GameCenters.Machines.Queries do
+  import Ecto.Query, warn: false
+  alias Rankmode.Repo
+  alias Rankmode.GameCenters.Machines.Machine
+
+  def for(center: gamecenter_id) do
+    from(m in Machine,
+      where: m.gamecenter_id == ^gamecenter_id,
+      preload: [:game, :mix])
+    |> Repo.all()
+  end
+
+  def get(id: id) do
+    Repo.get_by(Machine, id: id)
+  end
+end

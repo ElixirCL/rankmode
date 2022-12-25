@@ -22,3 +22,14 @@ defmodule Rankmode.Songs do
     |> Repo.insert()
   end
 end
+
+defmodule Rankmode.Songs.Queries do
+  import Ecto.Query, warn: false
+
+  alias Rankmode.Repo
+  alias Rankmode.Songs.Song
+
+  def get!(id: id) do
+    Repo.get_by!(Song, id: id)
+  end
+end

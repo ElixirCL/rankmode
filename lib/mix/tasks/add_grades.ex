@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
   use Mix.Task
   alias Rankmode.Grades.Commands
-  @shortdoc "Add data for Grades."
+  @shortdoc "Add data for PIU XX Grades."
   def run(_id) do
     Mix.Task.run("app.start")
     add_grades()
@@ -76,7 +76,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "SSS",
+      name: "SSS-",
       shortname: "f3s",
       image: "/images/grades/piu/f3s.png",
       game_id: game.id,
@@ -84,7 +84,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "SS",
+      name: "SS-",
       shortname: "f2s",
       image: "/images/grades/piu/f2s.png",
       game_id: game.id,
@@ -92,7 +92,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "S",
+      name: "S-",
       shortname: "f1s",
       image: "/images/grades/piu/f1s.png",
       game_id: game.id,
@@ -100,7 +100,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "A",
+      name: "A-",
       shortname: "fa",
       image: "/images/grades/piu/fa.png",
       game_id: game.id,
@@ -108,7 +108,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "B",
+      name: "B-",
       shortname: "fb",
       image: "/images/grades/piu/fb.png",
       game_id: game.id,
@@ -116,7 +116,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "C",
+      name: "C-",
       shortname: "fc",
       image: "/images/grades/piu/fc.png",
       game_id: game.id,
@@ -124,7 +124,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "D",
+      name: "D-",
       shortname: "fd",
       image: "/images/grades/piu/fd.png",
       game_id: game.id,
@@ -132,7 +132,7 @@ defmodule Mix.Tasks.Rankmode.Add.Grades.Xx do
     })
 
     Commands.create(%{
-      name: "F",
+      name: "F-",
       shortname: "ff",
       image: "/images/grades/piu/ff.png",
       game_id: game.id,

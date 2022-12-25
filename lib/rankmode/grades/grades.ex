@@ -25,6 +25,22 @@ defmodule Rankmode.Grades.Queries do
   alias Rankmode.Repo
   alias Rankmode.Grades.Grade
 
+  def all() do
+    Repo.all(Grade)
+  end
+
+  def all(in: mix_id) do
+    from(g in Grade,
+    where: g.mix_id == ^mix_id,
+    preload: [:game, :mix],
+    order_by: [:id])
+    |> Repo.all()
+  end
+
+  def get(id: grade_id) do
+    Repo.get_by(Grade, id: grade_id)
+  end
+
   def get!(shortname: shortname) do
     Repo.get_by!(Grade, shortname: shortname)
   end

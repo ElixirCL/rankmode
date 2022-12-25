@@ -21,3 +21,13 @@ defmodule Rankmode.GameCenters do
     |> Repo.insert()
   end
 end
+
+defmodule Rankmode.GameCenters.Queries do
+  import Ecto.Query, warn: false
+  alias Rankmode.Repo
+  alias Rankmode.GameCenters.GameCenter
+
+  def get(id: id) do
+    Repo.get_by(GameCenter, id: id)
+  end
+end
