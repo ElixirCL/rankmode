@@ -13,7 +13,8 @@ defmodule RankmodeWeb.GameplayController do
 
   action_fallback RankmodeWeb.FallbackController
 
-  # TODO: Maybe this controller is doing too much. Consider moving the business logic to Domain
+  # TODO: Implement the newest version of the commands
+  # present in live/gameplays/new.ex
 
   def create(conn, params) do
     card_uid = Helpers.header(conn, "card")

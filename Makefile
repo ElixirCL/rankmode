@@ -1,4 +1,4 @@
-.PHONY: install server db.data db.setup db.boot
+.PHONY: install server db.data db.setup db.boot fly.deploy fly.proxy
 
 server s:
 	iex -S mix phx.server
@@ -24,3 +24,16 @@ db.data dd:
 db.boot db:
 	make db.setup
 	make db.data
+
+fly.deploy:
+	fly deploy . --app rankmode
+
+# For postgres connection
+# user: postgres
+# db: rankmode
+# host: rankmode-db
+# port: 6543
+# you can configure the db locally in config/dev.exs to point to fly.io
+# and then execute the mix tasks to fill with data
+fly.proxy:
+	fly proxy 6543:5432 -a rankmode-db

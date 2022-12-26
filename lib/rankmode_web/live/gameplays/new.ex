@@ -27,13 +27,14 @@ defmodule RankmodeWeb.Live.Gameplays.New do
     song = Songs.Queries.get!(id: song_id)
 
     charts = Charts.Queries.for(mix: profile.mix_id, song: song_id)
-    chart = Charts.Queries.get(id: Map.get(values, "chart", 0)) || List.first(charts)
 
     modes = Charts.Queries.modes(charts)
     mode = Modes.get(id: Map.get(values, "mode", 0)) || List.first(modes)
 
     ratings = Charts.Queries.ratings(charts, mode: mode)
     rating = Charts.Queries.ratings(ratings, with: Map.get(values, "rating"))
+
+    chart = rating.chart || Charts.Queries.get(id: Map.get(values, "chart", 0)) || List.first(charts)
 
     gamecenter = GameCenters.Queries.get(id: Map.get(values, "gamecenter", 0)) || socket.assigns.gamecenter
 
@@ -101,7 +102,7 @@ defmodule RankmodeWeb.Live.Gameplays.New do
 
         case Leaderboards.Commands.update(profile.leaderboard.id, attrs) do
           {:ok, _leaderboard} -> {:noreply, put_flash(socket
-                |> redirect(to: "/./"),
+                |> redirect(to: Routes.gameplays_index_path(socket, :index, profile.id)),
                 :index,
                 "Gameplay Added."
               )

@@ -28,7 +28,7 @@ defmodule Rankmode.Songs.Charts do
 end
 
 defmodule Rankmode.Songs.Charts.Rating do
-  defstruct ~w(name type image difficulty)a
+  defstruct ~w(name type image difficulty chart)a
   alias Rankmode.Songs.Charts.Chart
 
   def from(%Chart{} = chart) do
@@ -36,7 +36,8 @@ defmodule Rankmode.Songs.Charts.Rating do
       name: chart.name,
       type: chart.type,
       image: chart.image,
-      difficulty: chart.difficulty
+      difficulty: chart.difficulty,
+      chart: chart
     }
   end
 end
