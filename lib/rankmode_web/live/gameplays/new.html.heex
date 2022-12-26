@@ -33,7 +33,7 @@
               Select Song
               </label>
               <div class="mb-4">
-                <select name="song" id="song" required>
+                <select name="song" id="song" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     <option disabled selected value> -- select a song -- </option>
 
@@ -54,7 +54,7 @@
               Gameplay Mode
               </label>
               <div class="mb-4">
-                <select name="mode" id="mode" required>
+                <select name="mode" id="mode" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <%= for mode <- @modes do %>
                       <option value={mode.id} selected={!is_nil(@mode) && mode.id == @mode.id}><%= mode.name %></option>
                     <% end %>
@@ -67,7 +67,7 @@
                 Difficulty Rating
                 </label>
                 <div class="mb-4">
-                  <select name="rating" id="rating" required>
+                  <select name="rating" id="rating" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                       <%= for rating <- @ratings do %>
                         <option value={rating.difficulty} selected={!is_nil(@rating) && rating.difficulty == @rating.difficulty}><%= rating.name %></option>
                       <% end %>
@@ -86,7 +86,7 @@
                 Game Center
                 </label>
                 <div class="mb-4">
-                  <select name="gamecenter" id="gamecenter" required>
+                  <select name="gamecenter" id="gamecenter" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                       <%= for gamecenter <- @gamecenters do %>
                         <option value={gamecenter.id} selected={!is_nil(@gamecenter) && gamecenter.id == @gamecenter.id}><%= gamecenter.name %></option>
                       <% end %>
@@ -99,7 +99,7 @@
                 Machine
                 </label>
                 <div class="mb-4">
-                  <select name="machine" id="machine" required>
+                  <select name="machine" id="machine" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                       <%= for machine <- @machines do %>
                         <option value={machine.id} selected={!is_nil(@machine) && machine.id == @machine.id}><%= machine.name %></option>
                       <% end %>
@@ -217,9 +217,9 @@
           Grade
           </label>
           <div class="mb-4">
-            <Avatar.new src={@grade.image} class="mr-2" style="height:50px;width:auto;" />
+            <Avatar.new src={@grade.image} class="mr-2 mb-4" style="height:50px;width:auto;" />
 
-            <select name="grade" id="grade" required>
+            <select name="grade" id="grade" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <%= for grade <- @grades do %>
                     <option value={grade.id} selected={(!is_nil(@grade) && grade.id == @grade.id)}><%= grade.name %></option>
                   <% end %>
@@ -230,8 +230,8 @@
           Judgement
           </label>
           <div class="mb-4">
-            <Avatar.new src={@judgement.image} class="mr-2" style="height:50px;width:auto;" />
-            <select name="judgement" id="judgement" required>
+            <Avatar.new src={@judgement.image} class="mr-2 mb-4" style="height:50px;width:auto;" />
+            <select name="judgement" id="judgement" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <%= for judgement <- @judgements do %>
                     <option value={judgement.id} selected={(!is_nil(@judgement) && judgement.id == @judgement.id)}><%= judgement.name %> (<%= String.upcase(judgement.shortname) %>)</option>
                   <% end %>

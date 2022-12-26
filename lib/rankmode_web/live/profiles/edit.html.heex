@@ -67,7 +67,7 @@
                         <Avatar.new src={Routes.static_path(@socket, @avatar.image)} size="l" />
                       </div>
                       <div class="flex-none w-2/3 max-w-full px-3">
-                          <select name="avatar" id="avatar" required>
+                          <select name="avatar" id="avatar" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <%= for avatar <- @avatars do %>
                               <option value={avatar.id} selected={@avatar.id == avatar.id} ><%= avatar.name %></option>
                             <% end %>
